@@ -1,10 +1,8 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+import plotly.express as px  # <-- PERBAIKAN DI SINI
 
-# ==================================
 # LOAD DATA
-# ==================================
 st.set_page_config(
     page_title="Dashboard Fiskal Daerah",
     layout="wide"
@@ -17,9 +15,8 @@ def load_data():
 
 df = load_data()
 
-# ==================================
+
 # SIDEBAR
-# ==================================
 st.sidebar.title("Filter Dashboard")
 
 kota_list = sorted(df['Kota'].unique())
@@ -161,9 +158,8 @@ fig3 = px.imshow(
 
 st.plotly_chart(fig3, use_container_width=True)
 
-# ==================================
+
 # DATA TABLE
-# ==================================
 st.subheader("Data Lengkap")
 
 st.dataframe(
